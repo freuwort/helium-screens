@@ -1,5 +1,5 @@
 <template>
-    <div class="view-background">
+    <div class="view-layout">
         <div class="inside">
             <slot></slot>
         </div>
@@ -10,8 +10,8 @@
 </script>
 
 <style lang="sass" scoped>
-    .view-background
-        position: absolute
+    .view-layout
+        position: fixed
         top: 0
         left: 0
         right: 0
@@ -29,7 +29,7 @@
             left: 0
             right: 0
             bottom: 0
-            background-image: url('/images/bg_1.jpg')
+            background-image: url('/images/backgrounds/plaster.jpg')
             background-position: center
             background-size: cover
             mix-blend-mode: multiply
@@ -37,7 +37,5 @@
         .inside
             position: relative
             z-index: 1
-            display: flex
-            flex-direction: column
             flex: 1
 </style>

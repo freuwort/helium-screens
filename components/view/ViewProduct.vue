@@ -1,6 +1,6 @@
 <template>
-    <ViewCard class="view-product-card" shadow="l">
-        <template #background v-if="highlighted">
+    <ViewCard class="view-component view-product" :class="{'highlight': highlight}" shadow="l">
+        <template #background v-if="highlight">
             <img :src="image" class="product-blur-image" />
         </template>
 
@@ -15,9 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-    // import Vibrant from 'node-vibrant'
-
-    const props = defineProps({
+    defineProps({
         image: {
             type: String,
             default: '',
@@ -30,21 +28,15 @@
             type: Number,
             default: 0,
         },
-        highlighted: {
+        highlight: {
             type: Boolean,
             default: false
         },
     })
-
-    // const test = ref(null)
-
-    // onMounted(() => {
-    //     Vibrant.from(props.image).getPalette((err: any, palette: any) => console.log(palette))
-    // })
 </script>
 
 <style lang="sass" scoped>
-    .view-product-card
+    .view-component.view-product
         position: relative
         height: 400px
 
@@ -82,13 +74,13 @@
 
                 h3
                     margin: 0
-                    font-size: 1.75rem
+                    font-size: 2rem
                     font-weight: 500
                     font-family: var(--font-heading)
 
                 p
                     margin: 0
-                    font-size: 1.25rem
+                    font-size: 1.5rem
                     font-weight: 400
                     font-family: var(--font-mono)
 </style>

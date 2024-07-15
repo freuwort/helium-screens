@@ -1,11 +1,11 @@
 <template>
-    <component :is="is" class="view-big-heading">
+    <component :is="is" class="view-component view-heading">
         <slot>{{ title }}</slot>
     </component>
 </template>
 
 <script lang="ts" setup>
-    const props = defineProps({
+    defineProps({
         is: {
             type: String,
             default: 'h2',
@@ -18,12 +18,13 @@
 </script>
 
 <style lang="sass" scoped>
-    .view-big-heading
+    .view-component.view-heading
         text-align: center
         font-weight: 700
         font-size: 6rem
-        margin: 0
+        margin-top: 3rem
         margin-bottom: 1rem
+        padding-inline: 3rem
         color: white
         opacity: .2
         background: linear-gradient(180deg, rgb(255, 255, 255, 1), rgb(255, 255, 255, .3))

@@ -1,11 +1,11 @@
 <template>
-    <div class="view-event-header" :class="{'fullscreen': fullscreen}">
-        <div class="background"></div>
+    <div class="view-component view-hero" :class="{'fullscreen': fullscreen}">
+        <div class="background" :style="{backgroundImage: `url(${background})`}"></div>
         <div class="inner">
-            <img :src="logo" alt="Event Logo" class="event-logo">
+            <img :src="logo" alt="Logo" class="logo">
             <HeFlex x-align="center" gap=".5rem">
-                <h2>{{ title }}</h2>
-                <p>{{ subtitle }}</p>
+                <h2 v-html="title"></h2>
+                <p v-html="subtitle"></p>
             </HeFlex>
         </div>
     </div>
@@ -14,6 +14,10 @@
 <script lang="ts" setup>
     defineProps({
         logo: {
+            type: String,
+            default: '',
+        },
+        background: {
             type: String,
             default: '',
         },
@@ -33,12 +37,12 @@
 </script>
 
 <style lang="sass" scoped>
-    .view-event-header
+    .view-component.view-hero
         position: relative
         display: flex
         align-items: center
         justify-content: center
-        height: 450px
+        height: 500px
         overflow: hidden
 
         &.fullscreen
@@ -53,7 +57,6 @@
             left: 0
             right: 0
             bottom: 0
-            background-image: url('/images/header_bg_1.jpg')
             background-position: center
             background-size: cover
             mask: linear-gradient(180deg, #ffffffff 40%, #ffffff00 100%)
@@ -74,7 +77,8 @@
             flex-direction: column
             align-items: center
             text-align: center
-            gap: 3rem
+            gap: 2rem
+            padding-inline: 3rem
 
             h2
                 margin: 0
@@ -83,12 +87,12 @@
 
             p
                 margin: 0
-                font-size: 1.5rem
+                font-size: 2rem
                 font-weight: 400
         
-            .event-logo
-                height: 100px
+            .logo
+                max-height: 14rem
+                max-width: 28rem
                 object-fit: contain
                 object-position: center
-                filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5))
 </style>

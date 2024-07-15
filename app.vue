@@ -1,43 +1,23 @@
 <template>
-    <div class="layout" v-for="view in data.views" :key="view.id" v-show="view.id === viewId">
-        <ViewBackground>
-            <template v-for="component in view.components" :key="component.id">
-                <template v-if="component.type === 'heading'">
-                    <ViewBigHeading :title="component.title" />
-                </template>
-                <template v-else-if="component.type === 'hero'">
-                    <ViewEventHeader :logo="component.foreground" :title="component.title" :subtitle="component.description" />
-                </template>
-                <template v-else-if="component.type === 'fullscreen_hero'">
-                    <ViewEventHeader :logo="component.foreground" :title="component.title" :subtitle="component.description" fullscreen />
-                </template>
-                <template v-else-if="component.type === 'icon_card'">
-                    <ViewIconCard :icon="component.foreground" :title="component.title" :color="component.background" />
-                </template>
-                <template v-else-if="component.type === 'products'">
-                    <ProductSection :items="component.items" />
-                </template>
+    <TransitionGroup name="layout">
+        <ViewLayout v-for="view in data.views" :key="view.id" v-show="view.id === viewId">
+            <template v-for="(component, i) in view.components" :key="component.id">
+                <ViewHeading v-if="component.type === 'heading'" :style="{transitionDelay: view.stagger * i + 'ms'}" :title="(component.title as string)" />
+                <ViewAlert v-else-if="component.type === 'alert'" :style="{transitionDelay: view.stagger * i + 'ms'}" :icon="(component.foreground as string)" :title="component.title" :color="(component.background as string)" />
+                <ViewProducts v-else-if="component.type === 'products'" :style="{transitionDelay: view.stagger * i + 'ms'}" :items="component.items" />
+                <ViewHero v-else-if="component.type === 'hero'" :style="{transitionDelay: view.stagger * i + 'ms'}" :logo="(component.foreground as string)" :background="(component.background as string)" :title="component.title" :subtitle="(component.description as string)" />
+                <ViewHero v-else-if="component.type === 'fullscreen_hero'" :style="{transitionDelay: view.stagger * i + 'ms'}" :logo="(component.foreground as string)" :background="(component.background as string)" :title="component.title" :subtitle="(component.description as string)" fullscreen />
             </template>
-        </ViewBackground>
-    </div>
+        </ViewLayout>
+    </TransitionGroup>
 </template>
 
 <script lang="ts" setup>
-    /**
-     * Available component types:
-     * heading
-     * image
-     * hero
-     * fullscreen_image
-     * fullscreen_hero
-     * icon_card
-     * products
-     */
-
+    // START: Fetch
     const data = ref({
         id: 1,
         type: 'carousel',
-        name: '[01] Theken Screen',
+        name: '01 Theken Screen',
         theme: 'dark',
         horizontal_resolution: 1080,
         vertical_resolution: 1920,
@@ -46,7 +26,8 @@
             {
                 id: 1,
                 name: 'Thekendienst View',
-                duration: 15000,
+                duration: 10000,
+                stagger: 100,
                 from_date: null,
                 from_time: null,
                 to_date: null,
@@ -55,10 +36,10 @@
                 components: [
                     {
                         type: 'hero',
-                        title: 'Queerer Kneipenabend',
-                        description: 'Dein queerer Bar- und NICHT-Partyabend',
-                        background: '/images/event_background.jpg',
-                        foreground: '/images/event_logo.png',
+                        title: 'Kneipenabend',
+                        description: 'Euer queerer Kneipenabend ab 20:00 Uhr',
+                        background: '/images/onkelemma/oe_background.jpg',
+                        foreground: '/images/onkelemma/oe_logo.png',
                         items: [],
                     },
                     {
@@ -80,18 +61,21 @@
                                 id: 1,
                                 name: 'Lime Martini',
                                 price: 5.5,
+                                highlight: false,
                                 image: '/images/cocktails/lime_martini.png',
                             },
                             {
                                 id: 2,
                                 name: 'Sunset Valley',
                                 price: 6,
+                                highlight: true,
                                 image: '/images/cocktails/sunset_valley.png',
                             },
                             {
                                 id: 3,
                                 name: 'Cherry Dream',
                                 price: 4.8,
+                                highlight: false,
                                 image: '/images/cocktails/cherry_dream.png',
                             },
                         ],
@@ -105,24 +89,24 @@
                         items: [],
                     },
                     {
-                        type: 'icon_card',
-                        title: 'Heute nur bis 22:30 Uhr',
+                        type: 'alert',
+                        title: 'Heute nur bis <b>22:30 Uhr</b>',
                         description: null,
                         background: '#66C8FF',
                         foreground: 'info',
                         items: [],
                     },
                     {
-                        type: 'icon_card',
-                        title: 'Eure Gastgeber: Mike und Lilly',
+                        type: 'alert',
+                        title: 'Eure Gastgeber: <b>Mike und Lilly</b>',
                         description: null,
                         background: '#C86FFF',
                         foreground: 'group',
                         items: [],
                     },
                     {
-                        type: 'icon_card',
-                        title: 'Folge Event: Women/MenDance',
+                        type: 'alert',
+                        title: 'Folge Event: <b>Women/MenDance</b>',
                         description: null,
                         background: '#FFC773',
                         foreground: 'confirmation_number',
@@ -134,6 +118,7 @@
                 id: 2,
                 name: 'QC Gruppe View',
                 duration: 10000,
+                stagger: 100,
                 from_date: null,
                 from_time: null,
                 to_date: null,
@@ -143,16 +128,20 @@
                     {
                         type: 'fullscreen_hero',
                         title: 'QueerCrew',
-                        description: 'Deine queere Jugendgruppe',
-                        background: '/images/qc_background.jpg',
-                        foreground: '/images/qc_logo.png',
+                        description: 'Deine queere Jugendgruppe<br>Jeden <b>2. und 4. Dienstag</b> im Monat ab <b>18:00 Uhr</b>',
+                        background: '/images/queercrew/qc_background.jpg',
+                        foreground: '/images/queercrew/qc_logo.png',
                         items: [],
                     },
                 ],
             },
         ],
     })
+    // END: Fetch
 
+
+
+    // START: Carousel cycle
     const viewId = ref<string|number|null>(null)
 
     function loadNextView() {
@@ -162,7 +151,6 @@
 
         setTimeout(loadNextView, view?.duration || 1000);
     }
-
 
     function findNextView(id: string|number|null = null) {
         let order = data.value.view_order
@@ -187,16 +175,32 @@
         return null
     }
 
-
     onMounted(loadNextView)
+    // END: Carousel cycle
 </script>
 
 <style lang="sass" scoped>
-    .layout
-        display: flex
-        position: fixed
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
+    .view-component
+        transition: all 1000ms
+
+
+
+    .layout-enter-active,
+    .layout-leave-active
+        transition: all 500ms
+
+    .layout-enter-from
+        opacity: 0
+        
+        .view-component
+            opacity: 0
+            transform: translateY(4rem)
+
+    .layout-leave-to
+        opacity: 0
+
+        > .view-component
+            opacity: 0
+            transform: translateY(-4rem)
+
 </style>
