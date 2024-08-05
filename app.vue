@@ -7,136 +7,19 @@
                 <ViewProducts v-else-if="component.type === 'products'" :style="{transitionDelay: view.stagger * i + 'ms'}" :items="component.items" />
                 <ViewHero v-else-if="component.type === 'hero'" :style="{transitionDelay: view.stagger * i + 'ms'}" :logo="(component.foreground as string)" :background="(component.background as string)" :title="component.title" :subtitle="(component.description as string)" />
                 <ViewHero v-else-if="component.type === 'fullscreen_hero'" :style="{transitionDelay: view.stagger * i + 'ms'}" :logo="(component.foreground as string)" :background="(component.background as string)" :title="component.title" :subtitle="(component.description as string)" fullscreen />
+                <ViewImage v-else-if="component.type === 'fullscreen_image'" :style="{transitionDelay: view.stagger * i + 'ms'}" :src="(component.background as string)" :alt="component.title" fullscreen />
             </template>
         </ViewLayout>
     </TransitionGroup>
 </template>
 
 <script lang="ts" setup>
+    import screen from './screen.js'
+
+
+
     // START: Fetch
-    const data = ref({
-        id: 1,
-        type: 'carousel',
-        name: '01 Theken Screen',
-        theme: 'dark',
-        horizontal_resolution: 1080,
-        vertical_resolution: 1920,
-        view_order: [1,2],
-        views: [
-            {
-                id: 1,
-                name: 'Thekendienst View',
-                duration: 10000,
-                stagger: 100,
-                from_date: null,
-                from_time: null,
-                to_date: null,
-                to_time: null,
-                on_days: [0, 1, 2, 3, 4, 5, 6],
-                components: [
-                    {
-                        type: 'hero',
-                        title: 'Kneipenabend',
-                        description: 'Euer queerer Kneipenabend ab 20:00 Uhr',
-                        background: '/images/onkelemma/oe_background.jpg',
-                        foreground: '/images/onkelemma/oe_logo.png',
-                        items: [],
-                    },
-                    {
-                        type: 'heading',
-                        title: 'Heutige specials',
-                        description: null,
-                        background: null,
-                        foreground: null,
-                        items: [],
-                    },
-                    {
-                        type: 'products',
-                        title: 'Heutige specials',
-                        description: null,
-                        background: null,
-                        foreground: null,
-                        items: [
-                            {
-                                id: 1,
-                                name: 'Lime Martini',
-                                price: 5.5,
-                                highlight: false,
-                                image: '/images/cocktails/lime_martini.png',
-                            },
-                            {
-                                id: 2,
-                                name: 'Sunset Valley',
-                                price: 6,
-                                highlight: true,
-                                image: '/images/cocktails/sunset_valley.png',
-                            },
-                            {
-                                id: 3,
-                                name: 'Cherry Dream',
-                                price: 4.8,
-                                highlight: false,
-                                image: '/images/cocktails/cherry_dream.png',
-                            },
-                        ],
-                    },
-                    {
-                        type: 'heading',
-                        title: 'Infos zum Event',
-                        description: null,
-                        background: null,
-                        foreground: null,
-                        items: [],
-                    },
-                    {
-                        type: 'alert',
-                        title: 'Heute nur bis <b>22:30 Uhr</b>',
-                        description: null,
-                        background: '#66C8FF',
-                        foreground: 'info',
-                        items: [],
-                    },
-                    {
-                        type: 'alert',
-                        title: 'Eure Gastgeber: <b>Mike und Lilly</b>',
-                        description: null,
-                        background: '#C86FFF',
-                        foreground: 'group',
-                        items: [],
-                    },
-                    {
-                        type: 'alert',
-                        title: 'Folge Event: <b>Women/MenDance</b>',
-                        description: null,
-                        background: '#FFC773',
-                        foreground: 'confirmation_number',
-                        items: [],
-                    },
-                ],
-            },
-            {
-                id: 2,
-                name: 'QC Gruppe View',
-                duration: 10000,
-                stagger: 100,
-                from_date: null,
-                from_time: null,
-                to_date: null,
-                to_time: null,
-                on_days: [0, 1, 2, 3, 4, 5, 6],
-                components: [
-                    {
-                        type: 'fullscreen_hero',
-                        title: 'QueerCrew',
-                        description: 'Deine queere Jugendgruppe<br>Jeden <b>2. und 4. Dienstag</b> im Monat ab <b>18:00 Uhr</b>',
-                        background: '/images/queercrew/qc_background.jpg',
-                        foreground: '/images/queercrew/qc_logo.png',
-                        items: [],
-                    },
-                ],
-            },
-        ],
-    })
+    const data = ref(screen)
     // END: Fetch
 
 
