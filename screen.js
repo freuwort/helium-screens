@@ -10,7 +10,7 @@ export default {
         {
             id: 1,
             name: 'CSD Poster 1',
-            duration: 10000,
+            duration: 30000,
             stagger: 100,
             from_date: null,
             from_time: null,
@@ -31,7 +31,7 @@ export default {
         {
             id: 2,
             name: 'CSD Poster 2',
-            duration: 10000,
+            duration: 30000,
             stagger: 100,
             from_date: null,
             from_time: null,
@@ -52,7 +52,7 @@ export default {
         {
             id: 3,
             name: 'CSD Poster 3',
-            duration: 10000,
+            duration: 30000,
             stagger: 100,
             from_date: null,
             from_time: null,
@@ -73,7 +73,7 @@ export default {
         {
             id: 4,
             name: 'CSD Poster 4',
-            duration: 10000,
+            duration: 30000,
             stagger: 100,
             from_date: null,
             from_time: null,
@@ -94,7 +94,7 @@ export default {
         {
             id: 5,
             name: 'Fetisch Friends 1',
-            duration: 10000,
+            duration: 30000,
             stagger: 100,
             from_date: null,
             from_time: null,
