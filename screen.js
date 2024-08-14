@@ -5,11 +5,11 @@ export default {
     theme: 'dark',
     horizontal_resolution: 1080,
     vertical_resolution: 1920,
-    view_order: [1,2,3,4,5],
+    view_order: [1,2,3,4,5,6],
     views: [
         {
             id: 1,
-            name: 'CSD Poster 1',
+            name: 'TraBS Poster 1',
             duration: 30000,
             stagger: 100,
             from_date: null,
@@ -20,9 +20,9 @@ export default {
             components: [
                 {
                     type: 'fullscreen_image',
-                    title: 'CSD Poster 1',
+                    title: 'TraBS Poster 1',
                     description: null,
-                    background: '/images/poster/csd_1.jpg',
+                    background: '/images/poster/trabs_1.jpg',
                     foreground: null,
                     items: [],
                 },
@@ -30,7 +30,7 @@ export default {
         },
         {
             id: 2,
-            name: 'CSD Poster 2',
+            name: 'TraBS Poster 2',
             duration: 30000,
             stagger: 100,
             from_date: null,
@@ -41,9 +41,9 @@ export default {
             components: [
                 {
                     type: 'fullscreen_image',
-                    title: 'CSD Poster 2',
+                    title: 'TraBS Poster 2',
                     description: null,
-                    background: '/images/poster/csd_2.jpg',
+                    background: '/images/poster/trabs_2.jpg',
                     foreground: null,
                     items: [],
                 },
@@ -51,7 +51,7 @@ export default {
         },
         {
             id: 3,
-            name: 'CSD Poster 3',
+            name: 'TraBS Poster 3',
             duration: 30000,
             stagger: 100,
             from_date: null,
@@ -62,9 +62,9 @@ export default {
             components: [
                 {
                     type: 'fullscreen_image',
-                    title: 'CSD Poster 3',
+                    title: 'TraBS Poster 3',
                     description: null,
-                    background: '/images/poster/csd_3.jpg',
+                    background: '/images/poster/trabs_3.jpg',
                     foreground: null,
                     items: [],
                 },
@@ -72,7 +72,7 @@ export default {
         },
         {
             id: 4,
-            name: 'CSD Poster 4',
+            name: 'Flinta',
             duration: 30000,
             stagger: 100,
             from_date: null,
@@ -83,9 +83,9 @@ export default {
             components: [
                 {
                     type: 'fullscreen_image',
-                    title: 'CSD Poster 4',
+                    title: 'Flinta',
                     description: null,
-                    background: '/images/poster/csd_4.jpg',
+                    background: '/images/poster/flinta.jpg',
                     foreground: null,
                     items: [],
                 },
@@ -93,6 +93,27 @@ export default {
         },
         {
             id: 5,
+            name: 'Kids Play Date',
+            duration: 30000,
+            stagger: 100,
+            from_date: null,
+            from_time: null,
+            to_date: null,
+            to_time: null,
+            on_days: [0, 1, 2, 3, 4, 5, 6],
+            components: [
+                {
+                    type: 'fullscreen_image',
+                    title: 'Kids Play Date',
+                    description: null,
+                    background: '/images/poster/kids_play_date.jpg',
+                    foreground: null,
+                    items: [],
+                },
+            ],
+        },
+        {
+            id: 6,
             name: 'Fetisch Friends 1',
             duration: 30000,
             stagger: 100,
