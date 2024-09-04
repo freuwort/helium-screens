@@ -5,7 +5,7 @@ export default {
     theme: 'dark',
     horizontal_resolution: 1080,
     vertical_resolution: 1920,
-    view_order: [1,2,3,4,5,6],
+    view_order: [1,2,3,4,5,6,7],
     views: [
         {
             id: 1,
@@ -114,6 +114,27 @@ export default {
         },
         {
             id: 6,
+            name: 'MDWD',
+            duration: 30000,
+            stagger: 100,
+            from_date: null,
+            from_time: null,
+            to_date: null,
+            to_time: null,
+            on_days: [0, 1, 2, 3, 4, 5, 6],
+            components: [
+                {
+                    type: 'fullscreen_image',
+                    title: 'MDWD',
+                    description: null,
+                    background: '/images/poster/mdwd_1.jpg',
+                    foreground: null,
+                    items: [],
+                },
+            ],
+        },
+        {
+            id: 7,
             name: 'Fetisch Friends 1',
             duration: 30000,
             stagger: 100,
