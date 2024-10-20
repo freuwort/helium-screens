@@ -5,7 +5,7 @@ export default {
     theme: 'dark',
     horizontal_resolution: 1080,
     vertical_resolution: 1920,
-    view_order: [1,2,3,4,5,6,7],
+    view_order: [1,2,3,4,5,6,7,8],
     views: [
         {
             id: 1,
@@ -93,7 +93,7 @@ export default {
         },
         {
             id: 5,
-            name: 'Queermonics',
+            name: 'Neues Dach',
             duration: 30000,
             stagger: 100,
             from_date: null,
@@ -104,9 +104,9 @@ export default {
             components: [
                 {
                     type: 'fullscreen_image',
-                    title: 'Queermonics',
+                    title: 'Neues Dach',
                     description: null,
-                    background: '/images/poster/queermonics_1.png',
+                    background: '/images/poster/neues_dach.jpg',
                     foreground: null,
                     items: [],
                 },
@@ -114,7 +114,7 @@ export default {
         },
         {
             id: 6,
-            name: 'MDWD',
+            name: 'wlan',
             duration: 30000,
             stagger: 100,
             from_date: null,
@@ -125,9 +125,9 @@ export default {
             components: [
                 {
                     type: 'fullscreen_image',
-                    title: 'MDWD',
+                    title: 'wlan',
                     description: null,
-                    background: '/images/poster/mdwd_1.jpg',
+                    background: '/images/poster/wlan.jpg',
                     foreground: null,
                     items: [],
                 },
@@ -142,13 +142,34 @@ export default {
             from_time: null,
             to_date: null,
             to_time: null,
-            on_days: [5],
+            on_days: [0, 5, 6],
             components: [
                 {
                     type: 'fullscreen_image',
                     title: 'Fetisch Friends 1',
                     description: null,
                     background: '/images/poster/fetisch_1.jpg',
+                    foreground: null,
+                    items: [],
+                },
+            ],
+        },
+        {
+            id: 8,
+            name: 'Fetisch Friends 2',
+            duration: 30000,
+            stagger: 100,
+            from_date: null,
+            from_time: null,
+            to_date: null,
+            to_time: null,
+            on_days: [0, 5, 6],
+            components: [
+                {
+                    type: 'fullscreen_image',
+                    title: 'Fetisch Friends 2',
+                    description: null,
+                    background: '/images/poster/fetisch_2.jpg',
                     foreground: null,
                     items: [],
                 },
