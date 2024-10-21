@@ -18,39 +18,53 @@
 
 
 
+    // START: Data
+    const data = ref<any>({})
+    const viewId = ref<string|number|null>(null)
+    // END: Data
+
+
+
     // START: Fetch
-    const data = ref(screen)
+    function fetch() {
+        data.value = screen
+    }
     // END: Fetch
 
 
 
-    // START: Carousel cycle
-    const viewId = ref<string|number|null>(null)
+    // START: Refresh
+    function scheduleRefresh() {
+        let refreshAfter = data.value.views
+            .filter((view: any) => shouldShowView(view))
+            .reduce((duration: number, view: any) => duration + (view?.duration || 0), 0)
+            
+        setTimeout(() => location.reload(), refreshAfter)
+    }
+    // END: Refresh
 
-    function loadNextView() {
+
+
+    // START: Carousel cycle
+    function showNextView() {
         let view = findNextView(viewId.value)
 
         viewId.value = view?.id || null
 
-        setTimeout(loadNextView, view?.duration || 1000);
+        setTimeout(showNextView, view?.duration || 1000)
     }
 
     function findNextView(id: string|number|null = null) {
         let order = data.value.view_order
-        let startIndex = order.findIndex(viewId => viewId === id)
+        let startIndex = order.findIndex((viewId: any) => viewId === id)
         
         order = order.slice(startIndex).concat(order.slice(0, startIndex))
 
         for (let i = 1; i < order.length; i++)
         {
-            let view = data.value.views.find(view => view.id === order[i])
+            let view = data.value.views.find((view: any) => view.id === order[i])
 
-            if (!view) continue
-            if (view.on_days && !view.on_days.includes(new Date().getDay())) continue
-            if (view.from_date && new Date(view.from_date) > new Date()) continue
-            if (view.from_time && new Date(view.from_time) > new Date()) continue
-            if (view.to_date && new Date(view.to_date) < new Date()) continue
-            if (view.to_time && new Date(view.to_time) < new Date()) continue
+            if (!view || !shouldShowView(view)) continue
 
             return view
         }
@@ -58,8 +72,27 @@
         return null
     }
 
-    onMounted(loadNextView)
+    function shouldShowView(view: any) {
+        if (view.on_days && !view.on_days.includes(new Date().getDay())) return false
+        if (view.from_date && new Date(view.from_date) > new Date()) return false
+        if (view.from_time && new Date(view.from_time) > new Date()) return false
+        if (view.to_date && new Date(view.to_date) < new Date()) return false
+        if (view.to_time && new Date(view.to_time) < new Date()) return false
+
+        return true
+    }
     // END: Carousel cycle
+
+
+
+    /////////////
+    // STARTUP //
+    /////////////
+    onMounted(() => {
+        fetch()
+        showNextView()
+        scheduleRefresh()
+    })
 </script>
 
 <style lang="sass" scoped>
