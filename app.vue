@@ -28,6 +28,26 @@
     // START: Fetch
     function fetch() {
         data.value = screen
+        data.value.views = data.value.views.map((view: any) => ({
+            id: null,
+            name: 'generic',
+            duration: 30000,
+            stagger: 100,
+            from_date: null,
+            from_time: null,
+            to_date: null,
+            to_time: null,
+            on_days: [],
+            ...view,
+            components: view.components.map((component: any) => ({
+                type: 'fullscreen_image',
+                title: 'generic',
+                foreground: null,
+                background: null,
+                items: [],
+                ...component,
+            }))
+        }))
     }
     // END: Fetch
 
@@ -75,8 +95,8 @@
     function shouldShowView(view: any) {
         if (view.on_days && !view.on_days.includes(new Date().getDay())) return false
         if (view.from_date && new Date(view.from_date) > new Date()) return false
-        if (view.from_time && new Date(view.from_time) > new Date()) return false
         if (view.to_date && new Date(view.to_date) < new Date()) return false
+        if (view.from_time && new Date(view.from_time) > new Date()) return false
         if (view.to_time && new Date(view.to_time) < new Date()) return false
 
         return true
