@@ -5,7 +5,7 @@ export default {
     horizontal_resolution: 1080,
     vertical_resolution: 1920,
     view_order: [
-        1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
+        1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
     ],
     views: [
         {id:  1, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/trabs_1.jpg' }]},
@@ -26,9 +26,11 @@ export default {
         {id: 16, on_days: [2, 5], components: [{ background: '/images/poster/jtl_2.jpg' }]},
         {id: 17, on_days: [3, 6], components: [{ background: '/images/poster/jtl_3.jpg' }]},
         {id: 18, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/puppy_1.jpg' }]},
-        {id: 19, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/puppy_2.jpg' }]},
-        {id: 20, on_days: [0, 5, 6], components: [{ background: '/images/poster/fetisch_1.jpg' }]},
-        {id: 21, on_days: [0, 5, 6], components: [{ background: '/images/poster/fetisch_2.jpg' }]},
-        {id: 22, on_days: [0, 5, 6], components: [{ background: '/images/poster/kft25.png' }]},
+        {id: 19, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/puppy_2_neu.jpg' }]},
+        {id: 20, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/travent_1.png' }]},
+        {id: 21, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/travent_2.png' }]},
+        {id: 22, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/queermonics_1.png' }]},
+        {id: 23, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/wm_dance.jpg' }]},
+        {id: 24, on_days: [0, 5, 6], components: [{ background: '/images/poster/kft25.png' }]},
     ],
 }
