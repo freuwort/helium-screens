@@ -5,7 +5,7 @@ export default {
     horizontal_resolution: 1080,
     vertical_resolution: 1920,
     view_order: [
-        1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
+        1,2,3,4,5,6,7,8,15,16,17,18,19,20,21,22,23,24
     ],
     views: [
         {id:  1, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/trabs_1.jpg' }]},
@@ -16,12 +16,6 @@ export default {
         {id:  6, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/wlan.jpg' }]},
         {id:  7, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/aufruf_kneipenabend.jpg' }]},
         {id:  8, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/aufruf_plakate.jpg' }]},
-        {id:  9, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/echt_1.jpg' }]},
-        {id: 10, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/echt_2.jpg' }]},
-        {id: 11, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/echt_3.jpg' }]},
-        {id: 12, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/echt_4.jpg' }]},
-        {id: 13, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/echt_5.jpg' }]},
-        {id: 14, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/hateshield.png' }]},
         {id: 15, on_days: [1, 4, 0], components: [{ background: '/images/poster/jtl_1.jpg' }]},
         {id: 16, on_days: [2, 5], components: [{ background: '/images/poster/jtl_2.jpg' }]},
         {id: 17, on_days: [3, 6], components: [{ background: '/images/poster/jtl_3.jpg' }]},
