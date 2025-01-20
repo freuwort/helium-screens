@@ -20,8 +20,8 @@ export default {
         {id: 17, on_days: [3, 6], components: [{ background: '/images/poster/jtl_3.jpg' }]},
         {id: 18, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/puppy_1.jpg' }]},
         {id: 19, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/puppy_2_neu.jpg' }]},
-        {id: 20, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/travent_1.png' }]},
-        {id: 21, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/travent_2.png' }]},
-        {id: 24, on_days: [0, 5, 6], components: [{ background: '/images/poster/kft25.png' }]},
+        
+        
+        
     ],
 }
