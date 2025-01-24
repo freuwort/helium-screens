@@ -31,7 +31,7 @@
         data.value.views = data.value.views.map((view: any) => ({
             id: null,
             name: 'generic',
-            duration: 3000,
+            duration: 30000,
             stagger: 100,
             from_date: null,
             from_time: null,
