@@ -1,6 +1,6 @@
 <template>
     <TransitionGroup name="layout">
-        <ViewLayout v-for="view in data.views" :key="view.id" v-show="view.id === viewId">
+        <ViewLayout v-for="view in data.views" :key="view.id" v-show="view.id === data.view_order[viewIndex]">
             <template v-for="(component, i) in view.components" :key="component.id">
                 <ViewHeading v-if="component.type === 'heading'" :style="{transitionDelay: view.stagger * i + 'ms'}" :title="(component.title as string)" />
                 <ViewAlert v-else-if="component.type === 'alert'" :style="{transitionDelay: view.stagger * i + 'ms'}" :icon="(component.foreground as string)" :title="component.title" :color="(component.background as string)" />
@@ -20,7 +20,7 @@
 
     // START: Data
     const data = ref<any>({})
-    const viewId = ref<string|number|null>(null)
+    const viewIndex = ref<number>(-1)
     // END: Data
 
 
@@ -31,7 +31,7 @@
         data.value.views = data.value.views.map((view: any) => ({
             id: null,
             name: 'generic',
-            duration: 30000,
+            duration: 3000,
             stagger: 100,
             from_date: null,
             from_time: null,
@@ -67,24 +67,29 @@
 
     // START: Carousel cycle
     function showNextView() {
-        let view = findNextView(viewId.value)
-
-        viewId.value = view?.id || null
+        let view = findNextView()
 
         setTimeout(showNextView, view?.duration || 1000)
     }
 
-    function findNextView(id: string|number|null = null) {
-        let order = data.value.view_order
-        let startIndex = order.findIndex((viewId: any) => viewId === id)
-        
-        order = order.slice(startIndex).concat(order.slice(0, startIndex))
+    function findNextView() {
+        // Repeat the cycle until a view is found or every option has been exhausted
+        for (let i = 1; i < data.value.view_order.length; i++) {
+            // Try the next view
+            viewIndex.value++
 
-        for (let i = 1; i < order.length; i++)
-        {
-            let view = data.value.views.find((view: any) => view.id === order[i])
+            // Loop back to the start if needed
+            if (viewIndex.value >= data.value.view_order.length) {
+                viewIndex.value = 0
+            }
 
-            if (!view || !shouldShowView(view)) continue
+            // Try to find the view
+            let view = data.value.views.find((view: any) => view.id === data.value.view_order[viewIndex.value])
+
+            // Skip the view if it doesn't exist or should not be shown
+            if (!view || !shouldShowView(view)) {
+                continue
+            }
 
             return view
         }
