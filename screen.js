@@ -10,7 +10,8 @@ export default {
     views: [
         {id:  1, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/trabs_1.jpg' }]},
         {id:  2, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/trabs_2.jpg' }]},
-        {id:  3, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/trabs_3.jpg' }]},     
+        {id:  3, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/trabs_3.jpg' }]},
+        {id:  4, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/Flinta.jpg' }]},     
         {id:  6, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/wlan.jpg' }]},
         {id:  7, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/aufruf_kneipenabend.jpg' }]},
         {id:  8, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/aufruf_plakate.jpg' }]},
