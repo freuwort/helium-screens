@@ -5,7 +5,7 @@ export default {
     horizontal_resolution: 1080,
     vertical_resolution: 1920,
     view_order: [
-        1, 9, 7, 6, 2, 10, 8, 12, 3, 13, 14, 7, 11, 6, 15,  16, 17, 18, 4,
+        1, 9, 7, 6, 2, 10, 8, 12, 3, 13, 14, 7, 11, 6, 15, 17, 18, 4, 16
     ],
     views: [
         {id:  1, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/trabs_1.jpg' }]},
