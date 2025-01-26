@@ -24,6 +24,6 @@ export default {
         {id: 15, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/BTWOW4.png' }] },
         {id: 16, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/BTWOW5.png' }] },
         {id: 17, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/puppy_1.jpg' }] },
-        {id: 18, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/Termine_2.jpg' }] },
+        {id: 18, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/Termin_2.jpg' }] },
     ],
 }
