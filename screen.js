@@ -28,8 +28,5 @@ export default {
         {id: 19, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/FF_Jahresprogramm.png' }]},
         {id: 20, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/FF_Valentin.png' }] },
         {id: 30, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/Schwarz.jpg' }] },
-}
-=======
     ],
 }
->>>>>>> a56eaa269d5f7926b868a492971b83bf7a41600b
