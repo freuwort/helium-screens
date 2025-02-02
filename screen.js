@@ -5,7 +5,7 @@ export default {
     horizontal_resolution: 1080,
     vertical_resolution: 1920,
     view_order: [
-        1, 9, 7, 6, 2, 10, 8, 12, 3, 13, 14, 7, 11, 6, 15, 17, 18, 4, 16, 19, 20, 99,
+        1, 9, 7, 6, 2, 10, 8, 12, 3, 13, 14, 7, 11, 6, 15, 17, 18, 4, 16, 19, 20, 30,
     ],
     views: [
         {id:  1, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/trabs_1.jpg' }]},
@@ -27,5 +27,9 @@ export default {
         {id: 18, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/Termin_2.jpg' }] },
         {id: 19, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/FF_Jahresprogramm.png' }]},
         {id: 20, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/FF_Valentin.png' }] },
-        {id: 99, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/Schwarz.jpg' }] },
+        {id: 30, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/Schwarz.jpg' }] },
 }
+=======
+    ],
+}
+>>>>>>> a56eaa269d5f7926b868a492971b83bf7a41600b
