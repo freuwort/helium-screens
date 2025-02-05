@@ -27,6 +27,7 @@ export default {
         {id: 18, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/Termin_2.jpg' }] },
         {id: 19, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/FF_Jahresprogramm.png' }]},
         {id: 20, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/FF_Valentin.png' }] },
+        {id: 21, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/MWD.jpg' }] },
         {id: 30, on_days: [0, 1, 2, 3, 4, 5, 6], components: [{ background: '/images/poster/Schwarz.jpg' }] },
     ],
 }
