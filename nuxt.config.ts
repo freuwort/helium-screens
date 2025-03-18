@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     css: [
         '~/assets/css/app.sass'
     ],
-    
+
     devtools: {
         enabled: true,
     },
@@ -17,4 +17,6 @@ export default defineNuxtConfig({
         plugins: ['relativeTime', 'utc', 'timezone'],
         defaultTimezone: 'Europe/Berlin',
     },
+
+    compatibilityDate: '2025-03-18',
 })

@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -12,7 +12,6 @@
   "dependencies": {
     "@types/node": "^20.11.19",
     "node-vibrant": "^3.2.1-alpha.1",
-    "nuxt": "^3.10.2",
     "sass": "^1.71.0",
     "sequelize": "^6.37.0",
     "tedious": "^16.7.0",
@@ -20,6 +19,7 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "dayjs-nuxt": "^2.1.9"
+    "dayjs-nuxt": "^2.1.9",
+    "nuxt": "^3.16.0"
   }
 }
