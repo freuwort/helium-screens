@@ -14,4 +14,6 @@ export default [
     { on_days: [0, 1, 2, 3, 4, 5, 6], image: 'puppy_1.jpg', },
     { on_days: [0, 1, 2, 3, 4, 5, 6], image: 'FF_Jahresprogramm.png', },
     { on_days: [0, 1, 2, 3, 4, 5, 6], image: 'MWD.jpg', },
+    { on_days: [0, 1, 2, 3, 4, 5, 6], image: 'QBA.jpg', },
+
 ]
