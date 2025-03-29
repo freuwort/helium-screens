@@ -8,14 +8,32 @@
 
 <script lang="ts" setup>
     import content from './content.js'
+    import dayjs from 'dayjs'
 
+    const route = useRoute()
+    const today = dayjs()
     const viewIndex = ref(-1)
     const views = computed(() => content
         .map((view: any) => ({
-            on_days: view.on_days || [],
+            days: view.days || [],
+            display: view.display || [],
+            expire: view.expire || null,
             image: '/images/content/' + view.image,
         }))
-        .filter((view: any) => view.on_days.includes(new Date().getDay()))
+        .filter((view: any) => {
+            // Check if the view is active today
+            if (view.days.length && !view.days.includes(today.day())) return false
+
+            // Check if the view has an expiration date
+            if (view.expire && today.isAfter(dayjs(view.expire))) return false
+
+            // Check if the view should be displayed based on the query parameter
+            if (route.query.display && view.display.length > 0 && !view.display.includes(route.query.display)) return false
+
+            // Otherwise, the view should be shown
+            return true
+        })
+
     )
 
     function showNextView() {
