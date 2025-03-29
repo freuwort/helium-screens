@@ -47,4 +47,5 @@ export default [
     { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'FF_Jahresprogramm.png', },
     { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'MWD.jpg', },
     { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'QBA.jpg', },
+    { display: ['test'], days: [0, 1, 2, 3, 4, 5, 6], image: 'wlan.jpg', },
 ]
