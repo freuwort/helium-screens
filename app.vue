@@ -48,6 +48,7 @@
     
     onMounted(() => {
         showNextView()
+        console.log('Display ID: ' + (route.query.display || 'No ID provided'))
     })
 </script>
 
