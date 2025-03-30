@@ -7,13 +7,17 @@
 </template>
 
 <script lang="ts" setup>
+    import type { View } from './types/View'
     import content from './content.js'
     import dayjs from 'dayjs'
 
     const route = useRoute()
     const today = dayjs()
     const viewIndex = ref(-1)
-    const views = computed(() => content
+    const views = ref<View[]>([])
+
+    function filterViews() {
+        views.value = content
         .map((view: any) => ({
             days: view.days || [],
             display: view.display || [],
@@ -33,8 +37,7 @@
             // Otherwise, the view should be shown
             return true
         })
-
-    )
+    }
 
     function showNextView() {
         viewIndex.value ++
@@ -43,12 +46,31 @@
             return location.reload()
         }
 
+        console.log(`Displaying: %c${views.value[viewIndex.value]?.image || 'not defined'}`, 'font-weight: bold;')
+
         setTimeout(showNextView, 30000)
+    }
+
+    function checkForContent() {
+        return views.value.length > 0
     }
     
     onMounted(() => {
-        showNextView()
-        console.log('Display ID: ' + (route.query.display || 'No ID provided'))
+        console.log(`================================================`)
+        console.log(`%cBooting up ...`, 'color: #6c5ce7; font-weight: bold;')
+        console.log(`Display ID: %c${route.query.display || 'not defined'}`, 'font-weight: bold;')
+        console.log(`Timestamp:  %c${today.format('YYYY-MM-DD HH:mm:ss')}`, 'font-weight: bold;')
+        console.log(`%cFiltering views ...`, 'color: #6c5ce7; font-weight: bold;')
+        filterViews()
+        console.log(`Views remaining: %c${views.value.length}`, 'font-weight: bold;')
+        if (checkForContent()) {
+            console.log(`%cDisplaying views ...`, 'color: #6c5ce7; font-weight: bold;')
+            showNextView()
+        }
+        else {
+            console.log(`%cNo content found, reloading in 60 seconds ...`, 'color: #ffa502; font-weight: bold;')
+            setTimeout(() => location.reload(), 60000)
+        }
     })
 </script>
 
@@ -70,7 +92,7 @@
         width: 100%
         height: 100%
         overflow: hidden
-        cursor: none
+        // cursor: none
 
         .view
             position: absolute
