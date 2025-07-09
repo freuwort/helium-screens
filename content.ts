@@ -59,5 +59,13 @@ export default [
     { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'puppy_1.jpg', },
     { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'FF_Jahresprogramm.png', },
     { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'MWD.jpg', },
+    { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'Insta1.jpg', },
+    { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'Insta2.jpg', },
+    { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'Insta3.jpg', },
+    { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'Insta4.jpg', },
+    { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'Insta5.jpg', },
+    { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'Insta6.jpg', },
+    { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'Insta7.jpg', },
+    { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'Insta8.jpg', },
     { display: ['test'], days: [0, 1, 2, 3, 4, 5, 6], image: 'wlan.jpg', },
 ] as View[]
