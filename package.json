@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "dayjs-nuxt": "^2.1.9",
-    "nuxt": "^3.17.5"
+    "nuxt": "^4.0.2"
   }
 }
