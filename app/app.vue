@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts" setup>
-    import type { View } from './types/View'
-    import content from './content.js'
+    import type { View } from '~~/types/View'
+    import content from '~~/content.js'
     import dayjs from 'dayjs'
 
     const route = useRoute()

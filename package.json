@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --host",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "dayjs-nuxt": "^2.1.9",
-    "nuxt": "^3.17.5"
+    "nuxt": "^4.0.2"
   }
 }
