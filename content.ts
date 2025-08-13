@@ -42,7 +42,6 @@ import type { View } from './types/View'
 
 export default [
     { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'qc.jpg', },
-    { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'finq_bar.png', },
     { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'trabs_1.jpg', },
     { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [1, 4, 0, 5, 6], image: 'jtl_1.jpg', },
     { display: ['oe_fenster', 'oe_clubraum', 'trabs'], days: [0, 1, 2, 3, 4, 5, 6], image: 'aufruf_kneipenabend.jpg', },
