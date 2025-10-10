@@ -10,12 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "sass": "^1.90.0",
+    "sass": "^1.93.2",
     "vue": "^3.4.19",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "dayjs-nuxt": "^2.1.11",
-    "nuxt": "^4.0.3"
+    "nuxt": "^4.1.3"
   }
 }
