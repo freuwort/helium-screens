@@ -12,7 +12,7 @@
   "dependencies": {
     "sass": "^1.93.2",
     "vue": "^3.4.19",
-    "vue-router": "^4.5.1"
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "dayjs-nuxt": "^2.1.11",
